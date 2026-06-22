@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Haroon Rashid | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1B3A6B;
+  --navy-deep: #0f2244;
+  --navy-light: #2a5298;
+  --gold: #C9A84C;
+  --gold-light: #e4c76a;
+  --cream: #F7F4EE;
+  --white: #ffffff;
+  --text: #1a2535;
+  --muted: #6b7a8d;
+  --border: #e2ddd5;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--text); }
+
+/* NAV */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:999;
+  background:rgba(15,34,68,0.96);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(201,168,76,0.2);
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 6vw; height:62px;
+}
+.nav-brand {
+  font-family:'Playfair Display',serif;
+  color:var(--gold); font-size:1.15rem; font-weight:700; letter-spacing:0.05em;
+}
+.nav-links { display:flex; gap:2rem; list-style:none; }
+.nav-links a {
+  color:rgba(255,255,255,0.65); text-decoration:none;
+  font-size:0.78rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase;
+  transition:color 0.2s;
+}
+.nav-links a:hover { color:var(--gold); }
+
+/* HERO */
+.hero {
+  min-height:100vh;
+  background:linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 55%, #1e4f8a 100%);
+  display:flex; align-items:center;
+  padding:100px 6vw 80px;
+  position:relative; overflow:hidden;
+}
+.hero-orb-1 {
+  position:absolute; width:500px; height:500px; border-radius:50%;
+  background:radial-gradient(circle, rgba(201,168,76,0.13) 0%, transparent 70%);
+  top:-100px; right:-50px; pointer-events:none;
+}
+.hero-orb-2 {
+  position:absolute; width:350px; height:350px; border-radius:50%;
+  background:radial-gradient(circle, rgba(42,82,152,0.4) 0%, transparent 70%);
+  bottom:-80px; left:15%; pointer-events:none;
+}
+.hero-inner {
+  max-width:1100px; margin:0 auto; width:100%;
+  display:grid; grid-template-columns:1.1fr 0.9fr; gap:5rem; align-items:center;
+  position:relative; z-index:1;
+}
+.hero-pill {
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(201,168,76,0.12);
+  border:1px solid rgba(201,168,76,0.35);
+  color:var(--gold-light); font-size:0.72rem; font-weight:600;
+  letter-spacing:0.15em; text-transform:uppercase;
+  padding:6px 16px; border-radius:100px; margin-bottom:1.5rem;
+  animation:fadeUp 0.5s ease both;
+}
+.hero-pill::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+.hero h1 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.6rem,4.5vw,4.2rem);
+  font-weight:900; color:var(--white); line-height:1.08;
+  margin-bottom:1rem;
+  animation:fadeUp 0.6s ease both;
+}
+.hero h1 em { color:var(--gold); font-style:normal; }
+.hero-role {
+  font-size:1rem; color:rgba(255,255,255,0.6);
+  margin-bottom:1.2rem; line-height:1.6;
+  animation:fadeUp 0.7s ease both;
+}
+.hero-desc {
+  font-size:0.92rem; color:rgba(255,255,255,0.45);
+  line-height:1.8; margin-bottom:2.2rem;
+  animation:fadeUp 0.8s ease both;
+}
+.hero-ctas { display:flex; gap:1rem; flex-wrap:wrap; animation:fadeUp 0.9s ease both; }
+.cta-primary {
+  background:var(--gold); color:var(--navy-deep);
+  font-weight:700; font-size:0.88rem; letter-spacing:0.04em;
+  padding:13px 30px; border-radius:8px; text-decoration:none;
+  transition:all 0.2s;
+}
+.cta-primary:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 8px 24px rgba(201,168,76,0.35); }
+.cta-ghost {
+  border:1.5px solid rgba(255,255,255,0.25);
+  color:rgba(255,255,255,0.8); font-size:0.88rem; font-weight:500;
+  padding:12px 28px; border-radius:8px; text-decoration:none;
+  transition:all 0.2s;
+}
+.cta-ghost:hover { border-color:var(--gold); color:var(--gold); transform:translateY(-2px); }
+
+/* HERO CARD */
+.hero-card {
+  background:rgba(255,255,255,0.055);
+  border:1px solid rgba(201,168,76,0.18);
+  border-radius:22px; padding:2.2rem;
+  backdrop-filter:blur(10px);
+  animation:fadeUp 0.85s ease both;
+}
+.card-avatar {
+  width:68px; height:68px; border-radius:50%;
+  background:linear-gradient(135deg, var(--gold) 0%, #8a6010 100%);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Playfair Display',serif;
+  font-size:1.7rem; font-weight:900; color:white;
+  margin-bottom:1.2rem;
+}
+.card-name { font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; color:white; }
+.card-title { font-size:0.78rem; color:var(--gold); margin-bottom:1.5rem; }
+.stats { display:grid; grid-template-columns:1fr 1fr; gap:0.8rem; margin-bottom:1.5rem; }
+.stat {
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:10px; padding:0.9rem; text-align:center;
+}
+.stat-n { font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:700; color:var(--gold); }
+.stat-l { font-size:0.68rem; color:rgba(255,255,255,0.45); margin-top:2px; }
+.chip-row { display:flex; flex-wrap:wrap; gap:0.4rem; }
+.chip {
+  background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.22);
+  color:var(--gold-light); font-family:'DM Mono',monospace;
+  font-size:0.68rem; padding:3px 10px; border-radius:4px;
+}
+
+/* SECTION BASE */
+section { padding:88px 6vw; }
+.sec-inner { max-width:1100px; margin:0 auto; }
+.sec-eyebrow {
+  font-family:'DM Mono',monospace; font-size:0.7rem;
+  letter-spacing:0.2em; text-transform:uppercase; color:var(--gold);
+  margin-bottom:0.5rem;
+}
+.sec-title {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.9rem,3vw,2.7rem); font-weight:700;
+  color:var(--navy); margin-bottom:3rem; line-height:1.2;
+}
+.sec-title em { color:var(--gold); font-style:normal; }
+
+/* ABOUT */
+#about { background:white; }
+.about-grid { display:grid; grid-template-columns:1fr 1.5fr; gap:5rem; align-items:start; }
+.about-contact { display:flex; flex-direction:column; gap:0.8rem; margin-top:2rem; }
+.ac-row { display:flex; align-items:center; gap:0.9rem; }
+.ac-icon { font-size:1rem; width:34px; text-align:center; }
+.ac-val { font-size:0.87rem; color:var(--muted); }
+.ac-val a { color:var(--navy); text-decoration:none; font-weight:500; }
+.ac-val a:hover { color:var(--gold); }
+.about-text p { font-size:0.95rem; line-height:1.85; color:var(--text); margin-bottom:1.1rem; }
+.uni-box {
+  background:var(--cream); border-left:3px solid var(--gold);
+  border-radius:0 10px 10px 0; padding:1.2rem 1.5rem;
+  margin-top:1.5rem;
+}
+.uni-box-title { font-weight:700; color:var(--navy); font-size:0.88rem; margin-bottom:0.6rem; }
+.uni-box p { font-size:0.85rem; line-height:1.75; color:var(--muted); margin:0; }
+
+/* EXPERIENCE */
+#experience { background:var(--cream); }
+.exp-list { display:flex; flex-direction:column; gap:1.4rem; }
+.exp-card {
+  background:white;
+  border:1px solid var(--border);
+  border-left:4px solid var(--gold);
+  border-radius:0 14px 14px 0;
+  padding:1.8rem 2.2rem;
+  transition:box-shadow 0.25s;
+}
+.exp-card:hover { box-shadow:0 10px 36px rgba(27,58,107,0.1); }
+.exp-card:first-child { border-left-color:var(--navy); }
+.exp-head { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.8rem; }
+.exp-left {}
+.exp-role { font-family:'Playfair Display',serif; font-size:1.15rem; font-weight:700; color:var(--navy); }
+.exp-org { font-size:0.85rem; color:var(--gold); font-weight:600; margin-top:3px; }
+.exp-badge {
+  background:rgba(27,58,107,0.07); color:var(--navy);
+  font-size:0.72rem; font-weight:600; letter-spacing:0.05em;
+  padding:4px 14px; border-radius:100px; white-space:nowrap; align-self:flex-start;
+}
+.exp-badge.active { background:rgba(201,168,76,0.12); color:#7a5f10; }
+.exp-points { margin-top:1.1rem; display:flex; flex-direction:column; gap:0.55rem; }
+.exp-pt { display:flex; gap:0.8rem; font-size:0.88rem; line-height:1.65; color:var(--text); }
+.exp-pt::before { content:'→'; color:var(--gold); flex-shrink:0; margin-top:1px; font-weight:700; }
+
+/* SKILLS */
+#skills { background:white; }
+.skills-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1.2rem; }
+.sk-card {
+  border:1px solid var(--border); border-radius:14px;
+  padding:1.5rem; transition:all 0.22s;
+}
+.sk-card:hover { transform:translateY(-4px); box-shadow:0 12px 32px rgba(27,58,107,0.1); border-color:rgba(201,168,76,0.4); }
+.sk-icon { font-size:1.7rem; margin-bottom:0.8rem; }
+.sk-cat { font-weight:700; color:var(--navy); font-size:0.9rem; margin-bottom:0.7rem; }
+.sk-chips { display:flex; flex-wrap:wrap; gap:0.4rem; }
+.sk-chip {
+  background:rgba(27,58,107,0.06); color:var(--navy);
+  font-size:0.73rem; padding:3px 10px; border-radius:4px; font-weight:500;
+}
+
+/* PROJECTS */
+#projects { background:var(--cream); }
+.proj-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(310px,1fr)); gap:1.4rem; }
+.proj-card {
+  background:white; border:1px solid var(--border);
+  border-radius:16px; padding:1.8rem;
+  display:flex; flex-direction:column;
+  transition:all 0.22s;
+}
+.proj-card:hover { transform:translateY(-4px); box-shadow:0 14px 40px rgba(27,58,107,0.12); }
+.proj-tag {
+  display:inline-block;
+  background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.28);
+  color:#7a5f10; font-size:0.68rem; font-weight:700;
+  letter-spacing:0.1em; text-transform:uppercase;
+  padding:3px 10px; border-radius:100px; margin-bottom:1rem;
+}
+.proj-name { font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; color:var(--navy); margin-bottom:0.6rem; }
+.proj-desc { font-size:0.85rem; line-height:1.75; color:var(--muted); flex:1; margin-bottom:1.2rem; }
+.proj-link { font-size:0.78rem; font-weight:600; color:var(--navy); text-decoration:none; }
+.proj-link:hover { color:var(--gold); }
+
+/* EDUCATION */
+#education { background:white; }
+.edu-list { display:flex; flex-direction:column; gap:1rem; }
+.edu-item {
+  display:flex; gap:1.4rem;
+  background:var(--cream); border-radius:12px;
+  padding:1.3rem 1.7rem; align-items:flex-start;
+}
+.edu-dot { width:12px; height:12px; border-radius:50%; background:var(--gold); margin-top:5px; flex-shrink:0; }
+.edu-deg { font-weight:700; color:var(--navy); font-size:0.92rem; }
+.edu-school { font-size:0.83rem; color:var(--muted); margin-top:3px; }
+.edu-grade { font-family:'DM Mono',monospace; font-size:0.75rem; color:var(--gold); margin-top:5px; font-weight:500; }
+
+/* CERTIFICATIONS */
+#certifications { background:var(--cream); }
+.cert-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1rem; }
+.cert-card {
+  background:white; border:1px solid var(--border);
+  border-radius:12px; padding:1.2rem 1.4rem;
+  display:flex; gap:0.9rem; align-items:flex-start;
+  transition:box-shadow 0.2s;
+}
+.cert-card:hover { box-shadow:0 6px 20px rgba(27,58,107,0.09); }
+.cert-ico { font-size:1.5rem; flex-shrink:0; margin-top:2px; }
+.cert-name { font-weight:600; font-size:0.84rem; color:var(--navy); line-height:1.4; }
+.cert-by { font-size:0.73rem; color:var(--muted); margin-top:3px; }
+.cert-a { font-size:0.7rem; color:var(--gold); text-decoration:none; display:inline-block; margin-top:5px; font-weight:500; }
+.cert-a:hover { text-decoration:underline; }
+
+/* ACHIEVEMENTS */
+#achievements { background:white; }
+.ach-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.2rem; }
+.ach-card {
+  border:1px solid var(--border); border-radius:14px;
+  padding:1.5rem; display:flex; gap:1rem; align-items:flex-start;
+}
+.ach-num {
+  font-family:'Playfair Display',serif; font-size:2rem;
+  font-weight:900; color:rgba(201,168,76,0.3); line-height:1; flex-shrink:0;
+}
+.ach-title { font-weight:700; color:var(--navy); font-size:0.9rem; margin-bottom:0.4rem; }
+.ach-desc { font-size:0.82rem; color:var(--muted); line-height:1.6; }
+
+/* CONTACT */
+#contact {
+  background:linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+  text-align:center;
+}
+#contact .sec-title { color:white; margin-bottom:0.8rem; }
+.contact-sub { color:rgba(255,255,255,0.55); font-size:0.95rem; margin-bottom:2.5rem; }
+.contact-row { display:flex; justify-content:center; gap:1.2rem; flex-wrap:wrap; }
+.cont-btn {
+  display:flex; align-items:center; gap:0.5rem;
+  background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.15);
+  color:white; text-decoration:none; padding:13px 24px;
+  border-radius:10px; font-size:0.86rem; font-weight:500;
+  transition:all 0.2s;
+}
+.cont-btn:hover { background:rgba(201,168,76,0.15); border-color:var(--gold); color:var(--gold); }
+
+/* FOOTER */
+footer {
+  background:var(--navy-deep);
+  text-align:center; padding:1.5rem;
+  font-size:0.77rem; color:rgba(255,255,255,0.3);
+  border-top:1px solid rgba(255,255,255,0.05);
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(22px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+@media(max-width:768px) {
+  .hero-inner { grid-template-columns:1fr; }
+  .about-grid { grid-template-columns:1fr; }
+  .nav-links { display:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Muhammad Haroon Rashid</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-orb-1"></div>
+  <div class="hero-orb-2"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-pill">Open to Remote · Relocation · On-site</div>
+      <h1>Muhammad<br><em>Haroon</em><br>Rashid</h1>
+      <p class="hero-role">Data Analyst &nbsp;·&nbsp; Process Automation &nbsp;·&nbsp; Quality Assurance<br>International Banking Operations</p>
+      <p class="hero-desc">Recruited via UBL's SEAP programme into the IO Athena transformation team — driving analytics, automation, and process intelligence across 15,000–30,000+ monthly transactions in UAE, Qatar & Bahrain. Published researcher, TECHNOVA'25 finalist, and holder of 10 professional certifications from Google and Anthropic.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="cta-primary">Get In Touch</a>
+        <a href="https://www.linkedin.com/in/muhammed-haroon-rashid-5886aa227" target="_blank" class="cta-ghost">LinkedIn Profile</a>
+        <a href="#experience" class="cta-ghost">View Work</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="card-avatar">MH</div>
+      <div class="card-name">Muhammad Haroon Rashid</div>
+      <div class="card-title">Transformation &amp; Data Analyst · UBL — International Operations Athena</div>
+      <div class="stats">
+        <div class="stat"><div class="stat-n">30K+</div><div class="stat-l">Monthly Txns Covered</div></div>
+        <div class="stat"><div class="stat-n">10+</div><div class="stat-l">Certifications</div></div>
+        <div class="stat"><div class="stat-n">3.43</div><div class="stat-l">CGPA (BSc SE)</div></div>
+        <div class="stat"><div class="stat-n">2nd</div><div class="stat-l">TECHNOVA'25</div></div>
+      </div>
+      <div class="chip-row">
+        <span class="chip">Python</span>
+        <span class="chip">Selenium</span>
+        <span class="chip">Power BI</span>
+        <span class="chip">SWIFT</span>
+        <span class="chip">Jira</span>
+        <span class="chip">SQL</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="sec-inner">
+    <div class="sec-eyebrow">Who I Am</div>
+    <div class="sec-title">About <em>Me</em></div>
+    <div class="about-grid">
+      <div>
+        <div class="about-contact">
+          <div class="ac-row"><div class="ac-icon">📞</div><div class="ac-val">0336-3171057</div></div>
+          <div class="ac-row"><div class="ac-icon">✉️</div><div class="ac-val"><a href="mailto:rashidmuhammdharoon77@gmail.com">rashidmuhammdharoon77@gmail.com</a></div></div>
+          <div class="ac-row"><div class="ac-icon">📍</div><div class="ac-val">Garden West, Karachi, 74550</div></div>
+          <div class="ac-row"><div class="ac-icon">🔗</div><div class="ac-val"><a href="https://www.linkedin.com/in/muhammed-haroon-rashid-5886aa227" target="_blank">LinkedIn Profile</a></div></div>
+          <div class="ac-row"><div class="ac-icon">🌐</div><div class="ac-val"><a href="#">Portfolio Website (You're Here)</a></div></div>
+        </div>
+        <div class="uni-box" style="margin-top:2rem;">
+          <div class="uni-box-title">🎓 Academic Background</div>
+          <p>BSc Software Engineering · Sir Syed University · CGPA 3.43<br>Oct 2021 – Sep 2025</p>
+        </div>
+      </div>
+      <div class="about-text">
+        <p>Recruited via UBL's SEAP (Science & Engineering Associates Programme) and embedded within the IO Athena programme — I work as a Transformation & Data Analyst overseeing performance analytics across UAE, Qatar, and Bahrain operations covering 15,000–30,000+ monthly transactions from the Karachi head office.</p>
+        <p>My professional profile sits at the intersection of data analytics, process automation, QA governance, and international banking technology. I specialize in designing executive MIS dashboards (Python · JavaScript), architecting SWIFT-to-CBS automation workflows, and driving measurable operational improvements across 5 business units and 10 active technology projects — while increasingly operating in a senior advisory and hiring capacity.</p>
+        <p>I hold 10 professional certifications from Google, Anthropic, and Uniathena spanning data analytics, project management, UX, AI, and Model Context Protocol — and am a published researcher in computer vision (YOLOv8 · VTSE Journal).</p>
+        <div class="uni-box">
+          <div class="uni-box-title">University Expertise — SSUET</div>
+          <p>BSc Software Engineering (CGPA 3.43 · SQE Score 98/100 — highest in cohort). Strong foundation across software quality assurance (Selenium, JUnit, TDD), SDLC, software architecture, UML, requirement engineering, business process modelling, Big Data Analytics, Data Warehousing, OLAP, and applied data visualization — all actively leveraged in my professional analytics role today.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="sec-inner">
+    <div class="sec-eyebrow">Career History</div>
+    <div class="sec-title">Professional <em>Experience</em></div>
+    <div class="exp-list">
+
+      <div class="exp-card">
+        <div class="exp-head">
+          <div class="exp-left">
+            <div class="exp-role">Transformation & Data Analyst — IO Athena</div>
+            <div class="exp-org">UBL — International Operations · SEAP Graduate · Karachi, Pakistan · UAE | Qatar | Bahrain</div>
+          </div>
+          <span class="exp-badge active">2025 – Present · Permanent</span>
+        </div>
+        <div class="exp-points">
+          <div class="exp-pt">Lead performance analytics and MIS reporting for 5 operational units covering 15,000–30,000+ monthly transactions — consolidating monthly & quarterly data into executive dashboards consumed by 5–10 senior stakeholders including Unit Heads and EVP-level management.</div>
+          <div class="exp-pt">Architected the IO Athena Executive Performance Dashboard (Python · JavaScript · HTML) — replacing fragmented manual reporting with a unified, real-time KPI platform covering comparative analytics across UAE, Qatar & Bahrain.</div>
+          <div class="exp-pt">Spearheading the CBS Payment Monitoring Dashboard (in collaboration with DPG, Digital Banking & IT) — providing live transaction visibility for RMs, Unit Heads & branch staff across DCP/DFE and Altitude channels, eliminating manual MIS and call-based tracking.</div>
+          <div class="exp-pt">Driving digital transformation on the DCP/DFE Outward Remittance portal — designing BPM workflow automation for branch-to-back-office routing, reducing manual touchpoints and improving processing TAT.</div>
+          <div class="exp-pt">Contributing to STP Inward Remittance automation (60% complete) — enabling SWIFT-to-CBS auto-credit with nature-based single-authorisation routing, materially reducing inward remittance TAT.</div>
+          <div class="exp-pt">Governing UAT across 47 CRF/BRD technology initiatives — identifying and escalating defects to IT in real-time, ensuring timely corrections across CBS, OAS, DCP & screening platform go-lives.</div>
+          <div class="exp-pt">Acting in expanded capacity including departmental hiring and stakeholder advisory alongside core analytics responsibilities.</div>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-head">
+          <div class="exp-left">
+            <div class="exp-role">Software Quality Engineer</div>
+            <div class="exp-org">Lennar Digital · Remote (Part-Time)</div>
+          </div>
+          <span class="exp-badge">2024 – 2025 · 1 Year</span>
+        </div>
+        <div class="exp-points">
+          <div class="exp-pt">Designed and executed 50–100 structured manual test cases covering functional, regression, and usability scenarios — logging 20–50 documented defects across multiple enterprise platform release cycles.</div>
+          <div class="exp-pt">Validated application performance, UI functionality, and API integration points against defined acceptance criteria — collaborating with development teams on root-cause resolution and regression sign-off.</div>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-head">
+          <div class="exp-left">
+            <div class="exp-role">Deep Learning Lab Associate & Instructor</div>
+            <div class="exp-org">Sir Syed University of Engineering & Technology — CS Department · Karachi</div>
+          </div>
+          <span class="exp-badge">2024 – 2025 · Part-Time</span>
+        </div>
+        <div class="exp-points">
+          <div class="exp-pt">Delivered applied deep learning lab sessions to cohorts of 20–30 undergraduate students — covering CNNs, YOLO-based object detection, image classification, and Python AI frameworks (TensorFlow · PyTorch).</div>
+          <div class="exp-pt">Mentored all 20–30 students on Final Year Projects involving deep learning algorithms — contributing to successful deliveries across computer vision and predictive modelling applications.</div>
+        </div>
+      </div>
+
+      <div class="exp-card">
+            <div class="exp-org">Excelerate · Global Experiential Programme</div>
+          </div>
+          <span class="exp-badge">2 Months · Internship</span>
+        </div>
+        <div class="exp-points">
+          <div class="exp-pt">Developed a full project charter, schedule, and risk register for a globally coordinated experiential event — managing scope, timelines, and cross-border team collaboration.</div>
+          <div class="exp-pt">Designed and administered the event budget, identified risk mitigation strategies, and presented project outcomes to senior leadership.</div>
+          <div class="exp-pt">Completed a 360-degree performance evaluation with distinction, recognized for initiative, communication, and delivery quality.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sec-inner">
+    <div class="sec-eyebrow">What I Bring</div>
+    <div class="sec-title">Technical <em>Skills</em></div>
+    <div class="skills-grid">
+      <div class="sk-card"><div class="sk-icon">📊</div><div class="sk-cat">Data Analytics &amp; MIS</div><div class="sk-chips"><span class="sk-chip">Python</span><span class="sk-chip">MS Excel</span><span class="sk-chip">Power BI</span><span class="sk-chip">Data Visualization</span><span class="sk-chip">Reconciliation Reports</span></div></div>
+      <div class="sk-card"><div class="sk-icon">🧪</div><div class="sk-cat">Quality Assurance</div><div class="sk-chips"><span class="sk-chip">Manual Testing</span><span class="sk-chip">Test Case Design</span><span class="sk-chip">Bug Reporting</span><span class="sk-chip">UAT</span><span class="sk-chip">Selenium</span><span class="sk-chip">JUnit</span></div></div>
+      <div class="sk-card"><div class="sk-icon">🔄</div><div class="sk-cat">Process &amp; Automation</div><div class="sk-chips"><span class="sk-chip">BPM</span><span class="sk-chip">Process Reengineering</span><span class="sk-chip">SDLC</span><span class="sk-chip">Workflow Automation</span><span class="sk-chip">BRD/CRF</span></div></div>
+      <div class="sk-card"><div class="sk-icon">🏦</div><div class="sk-cat">Banking &amp; Compliance</div><div class="sk-chips"><span class="sk-chip">SWIFT</span><span class="sk-chip">International Remittance</span><span class="sk-chip">AML/CFT</span><span class="sk-chip">Trade Finance</span><span class="sk-chip">Regulatory Reporting</span></div></div>
+      <div class="sk-card"><div class="sk-icon">🛠️</div><div class="sk-cat">Tools &amp; Platforms</div><div class="sk-chips"><span class="sk-chip">Jira</span><span class="sk-chip">Asana</span><span class="sk-chip">Trello</span><span class="sk-chip">Postman</span><span class="sk-chip">MS Office Suite</span><span class="sk-chip">Google Workspace</span></div></div>
+      <div class="sk-card"><div class="sk-icon">🤖</div><div class="sk-cat">AI &amp; Emerging Tech</div><div class="sk-chips"><span class="sk-chip">Claude API</span><span class="sk-chip">MCP Protocol</span><span class="sk-chip">Prompt Engineering</span><span class="sk-chip">AI Automation</span><span class="sk-chip">YOLOv8</span></div></div>
+      <div class="sk-card"><div class="sk-icon">📐</div><div class="sk-cat">Software Engineering</div><div class="sk-chips"><span class="sk-chip">Java</span><span class="sk-chip">UML Diagrams</span><span class="sk-chip">Software Architecture</span><span class="sk-chip">TDD</span><span class="sk-chip">Requirement Engineering</span></div></div>
+      <div class="sk-card"><div class="sk-icon">🌐</div><div class="sk-cat">Languages</div><div class="sk-chips"><span class="sk-chip">English (Proficient)</span><span class="sk-chip">Urdu (Native)</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="sec-inner">
+    <div class="sec-eyebrow">Notable Work</div>
+    <div class="sec-title">Projects &amp; <em>Initiatives</em></div>
+    <div class="proj-grid">
+
+      <div class="proj-card">
+        <span class="proj-tag">Banking · Real-Time · In Progress</span>
+        <div class="proj-name">CBS Payment Monitoring Dashboard — CPU Remittance</div>
+        <div class="proj-desc">Developing a centralized real-time payment monitoring dashboard in collaboration with DPG, Digital Banking, and IT teams at UBL International Operations. The system provides RMs (Relationship Managers), Unit Heads, and back-office CPU Remittance staff with live visibility into both outward and inward remittance transactions — from branch initiation all the way through to SWIFT authorization. Key functionalities include real-time transaction status tracking, assignment of payments to processors by Unit Heads, authorization workflows, multi-role access (RM · Branch · Unit Head), and centralized exception flagging — eliminating fragmented manual monitoring and streamlining the full payment lifecycle in one unified interface.</div>
+        <a class="proj-link" href="#">UBL Internal Initiative · IO Athena</a>
+      </div>
+
+      <div class="proj-card">
+        <span class="proj-tag">AI / Computer Vision</span>
+        <div class="proj-name">YOLOv8 Biker Helmet Detection System</div>
+        <div class="proj-desc">Final Year Project — a real-time computer vision system detecting helmet usage, rider presence, and vehicle speed using the YOLOv8 object detection algorithm. Generates automated safety enforcement reports. Research paper published in VFAST Transactions on Software Engineering (VTSE). Secured 2nd position at TECHNOVA'25 (IoBM) in the Final Year Project category.</div>
+        <a class="proj-link" href="https://vfast.org/journals/index.php/VTSE/article/view/2184" target="_blank">📄 Published Research Paper →</a>
+      </div>
+
+      <div class="proj-card">
+        <span class="proj-tag">Banking · Dashboard</span>
+        <div class="proj-name">IO Athena Executive Performance Dashboard</div>
+        <div class="proj-desc">End-to-end HTML/MIS dashboard for UBL's International Operations Athena programme, tracking KPIs across five operational units (CPU Remittance, Account Opening, Trade, PSU/SSU Screening, Treasury Recon) for UAE, Qatar, and Bahrain. Covers Q1 comparative analytics with inline data management and live chart updates.</div>
+        <a class="proj-link" href="#">UBL Internal Project</a>
+      </div>
+
+      <div class="proj-card">
+        <span class="proj-tag">Process Automation</span>
+        <div class="proj-name">SWIFT Transaction Workflow Automation</div>
+        <div class="proj-desc">Designed and implemented STP (Straight-Through Processing) workflow documentation and automation for international SWIFT-to-CBS remittance operations, reducing manual intervention and improving processing accuracy for outward and inward remittance flows across three Gulf regions.</div>
+        <a class="proj-link" href="#">UBL Internal Initiative</a>
+      </div>
+
+      <div class="proj-card">
+        <span class="proj-tag">Google UX</span>
+        <div class="proj-name">UX Design &amp; Research Projects</div>
+        <div class="proj-desc">Applied Google UX Design methodology across multiple projects as part of the Google UX Design Professional Certificate — covering user research, wireframing, prototyping, and usability testing following design thinking principles.</div>
+        <a class="proj-link" href="https://www.credly.com/badges/6446299e-8d64-4a8dbb14a334cd3c6118/public_url" target="_blank">View Certificate →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="sec-inner">
+    <div class="sec-eyebrow">Academic Journey</div>
+    <div class="sec-title"><em>Education</em></div>
+    <div class="edu-list">
+      <div class="edu-item">
+        <div class="edu-dot"></div>
+        <div>
+          <div class="edu-deg">Bachelor of Science in Software Engineering</div>
+          <div class="edu-school">Sir Syed University of Engineering &amp; Technology, Karachi · Oct 2021 – Sep 2025</div>
+          <div class="edu-grade">CGPA: 3.43 / 4.00</div>
+        </div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-dot"></div>
+        <div>
+          <div class="edu-deg">Intermediate — Pre-Engineering</div>
+          <div class="edu-school">Government College for Men, Nazimabad · Oct 2019 – Aug 2021</div>
+          <div class="edu-grade">79%</div>
+        </div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-dot"></div>
+        <div>
+          <div class="edu-deg">Matriculation — Science</div>
+          <div class="edu-school">Eden Academy, Karachi · Aug 2018 – Aug 2019</div>
+          <div class="edu-grade">80%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="sec-inner">
+    <div class="sec-eyebrow">Credentials</div>
+    <div class="sec-title">Certifications &amp; <em>Courses</em></div>
+    <div class="cert-grid">
+      <div class="cert-card"><div class="cert-ico">🎓</div><div><div class="cert-name">Google Advanced Data Analytics</div><div class="cert-by">Google / Coursera</div><a class="cert-a" href="https://www.credly.com/badges/b4c44bd2-22dd-4c71-87ee-23912b34fca8/public_url" target="_blank">View Certificate →</a></div></div>
+      <div class="cert-card"><div class="cert-ico">📊</div><div><div class="cert-name">Google Data Analytics Professional</div><div class="cert-by">Google / Coursera</div><a class="cert-a" href="https://www.credly.com/badges/079344f6-d4b4-402e-96c4-78fc7f2f5012/public_url" target="_blank">View Certificate →</a></div></div>
+      <div class="cert-card"><div class="cert-ico">🎨</div><div><div class="cert-name">Google UX Design Professional</div><div class="cert-by">Google / Coursera</div><a class="cert-a" href="https://www.credly.com/badges/6446299e-8d64-4a8dbb14a334cd3c6118/public_url" target="_blank">View Certificate →</a></div></div>
+      <div class="cert-card"><div class="cert-ico">📋</div><div><div class="cert-name">Google Project Management Professional</div><div class="cert-by">Google / Coursera</div><a class="cert-a" href="https://www.credly.com/badges/85954d41-bf84-4277-8cf4-026ecbe641f4/public_url" target="_blank">View Certificate →</a></div></div>
+      <div class="cert-card"><div class="cert-ico">🤖</div><div><div class="cert-name">Google AI Essentials</div><div class="cert-by">Google / Coursera</div><a class="cert-a" href="https://www.credly.com/badges/c89b7d1a-dedd-4727-8855-57f0eb12fd02/public_url" target="_blank">View Certificate →</a></div></div>
+      <div class="cert-card"><div class="cert-ico">💬</div><div><div class="cert-name">Google Prompting Essentials</div><div class="cert-by">Google / Coursera</div><a class="cert-a" href="https://www.credly.com/badges/560f83ce-82b4-4bf1-9ad7-6a2da5185877/public_url" target="_blank">View Certificate →</a></div></div>
+      <div class="cert-card"><div class="cert-ico">🧠</div><div><div class="cert-name">Introduction to Claude API &amp; MCP</div><div class="cert-by">Anthropic / Skilljar</div><a class="cert-a" href="#">Anthropic Certified</a></div></div>
+      <div class="cert-card"><div class="cert-ico">🔬</div><div><div class="cert-name">MCP Advanced Topics &amp; Agent Skills</div><div class="cert-by">Anthropic / Skilljar</div><a class="cert-a" href="#">Anthropic Certified</a></div></div>
+      <div class="cert-card"><div class="cert-ico">📈</div><div><div class="cert-name">Executive Data Analytics Diploma</div><div class="cert-by">Uniathena</div><div class="cert-by" style="margin-top:4px;font-size:0.7rem;">Data Analytics · Excel Visualization · Business Analytics</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="sec-inner">
+    <div class="sec-eyebrow">Recognition</div>
+    <div class="sec-title">Achievements &amp; <em>Publications</em></div>
+    <div class="ach-grid">
+      <div class="ach-card"><div class="ach-num">01</div><div><div class="ach-title">Published Research Paper</div><div class="ach-desc">Research paper on the YOLOv8 Biker Helmet Detection System published in VFAST Transactions on Software Engineering (VTSE) — a peer-reviewed international journal.</div></div></div>
+      <div class="ach-card"><div class="ach-num">02</div><div><div class="ach-title">2nd Place — TECHNOVA'25</div><div class="ach-desc">Secured 2nd position in the Final Year Project category at TECHNOVA'25 held at IoBM (Institute of Business Management), Karachi.</div></div></div>
+      <div class="ach-card"><div class="ach-num">03</div><div><div class="ach-title">SQE Academic Excellence</div><div class="ach-desc">Achieved 98 out of 100 in Software Quality Engineering — the highest academic result across all core modules in the degree programme.</div></div></div>
+      <div class="ach-card"><div class="ach-num">04</div><div><div class="ach-title">Anthropic Certified (5 Badges)</div><div class="ach-desc">Earned 5 Anthropic certifications via Skilljar: Claude API, MCP Fundamentals, MCP Advanced, Agent Skills, and Subagents — among the early cohort to achieve this milestone.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="sec-inner">
+    <div class="sec-eyebrow" style="color:rgba(255,255,255,0.5);">Let's Connect</div>
+    <div class="sec-title">Get In <em>Touch</em></div>
+    <p class="contact-sub">Open to full-time, remote, and relocation opportunities in Data Analytics, QA, and Banking Technology roles.</p>
+    <div class="contact-row">
+      <a class="cont-btn" href="mailto:rashidmuhammdharoon77@gmail.com">✉️ &nbsp;Email Me</a>
+      <a class="cont-btn" href="tel:+923363171057">📞 &nbsp;0336-3171057</a>
+      <a class="cont-btn" href="https://www.linkedin.com/in/muhammed-haroon-rashid-5886aa227" target="_blank">🔗 &nbsp;LinkedIn</a>
+      <a class="cont-btn" href="https://vfast.org/journals/index.php/VTSE/article/view/2184" target="_blank">📄 &nbsp;Research Paper</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2025 Muhammad Haroon Rashid · Data Analyst · Process Automation · Quality Assurance · Built with dedication.
+</footer>
+
+</body>
+</html>
